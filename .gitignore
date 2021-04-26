@@ -1,0 +1,15 @@
+# ENVIRONMENT
+env/*
+
+# IDE SETTINGS
+.vscode/*
+
+# pycache
+**/__pycache__
+**/*.pyc
+
+# Migrations
+**/migrations/
+
+# Log file
+.error.log

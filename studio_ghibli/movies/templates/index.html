@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #efefef;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <title>Basic Project</title>
+</head>
+
+<body>
+    {% if is_success == True %}
+    <h2>Movies and their Cast</h2>
+    <table>
+        <tr>
+            <th>Movie Name</th>
+            <th>Cast</th>
+        </tr>
+        {% for single_movie in movies %}
+        <tr>
+            <td>{{single_movie.title}}</td>
+            <td>
+                <table>
+                    <tr>
+                        {% for person in single_movie.people %}
+                        <td>{{person.name}}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1>{{message}}</h1>
+    {% endif %}
+
+</body>
+
+</html>
